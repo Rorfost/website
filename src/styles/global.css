@@ -33,6 +33,11 @@ body {
     sans-serif;
   font-size: 1rem;
   line-height: 1.65;
+  overflow-x: clip;
+}
+img {
+  max-width: 100%;
+  height: auto;
 }
 a {
   color: inherit;
@@ -401,7 +406,24 @@ nav a:hover {
   border: 0;
 }
 
-@media (max-width: 720px) {
+@media (max-width: 960px) {
+  .hero-grid {
+    grid-template-columns: 1fr;
+    gap: clamp(2.5rem, 6vw, 4rem);
+  }
+
+  .hero-panel {
+    min-height: 20rem;
+  }
+
+  .hero-icon-frame {
+    right: 10%;
+    bottom: 10%;
+    width: min(18rem, 46%);
+  }
+}
+
+@media (max-width: 780px) {
   .shell {
     width: min(100% - 2rem, 1120px);
   }
@@ -453,7 +475,6 @@ nav a:hover {
   .hero {
     padding-top: 4.25rem;
   }
-  .hero-grid,
   .two-column {
     grid-template-columns: 1fr;
     gap: 2.25rem;
