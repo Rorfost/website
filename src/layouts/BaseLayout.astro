@@ -1,0 +1,59 @@
+---
+import '../styles/global.css';
+import icon from '../assets/rorfost-icon.png';
+import socialPreview from '../assets/rorfost-social-preview.png';
+import { site } from '../data/site';
+
+interface Props {
+  title?: string;
+  description?: string;
+  noIndex?: boolean;
+}
+
+const {
+  title = `${site.name} — ${site.tagline}`,
+  description = site.description,
+  noIndex = false,
+} = Astro.props;
+const origin = Astro.site?.origin;
+const canonical = origin
+  ? new URL(Astro.url.pathname, origin).toString()
+  : undefined;
+const socialImage = origin
+  ? new URL(socialPreview.src, origin).toString()
+  : undefined;
+const isPreview =
+  import.meta.env.CF_PAGES_BRANCH && import.meta.env.CF_PAGES_BRANCH !== 'main';
+---
+
+<!doctype html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width" />
+    <meta name="description" content={description} />
+    <link rel="icon" type="image/png" href={icon.src} />
+    <link rel="apple-touch-icon" href={icon.src} />
+    {
+      (noIndex || isPreview) && (
+        <meta name="robots" content="noindex, nofollow" />
+      )
+    }
+    {canonical && <link rel="canonical" href={canonical} />}
+    <meta property="og:type" content="website" />
+    <meta property="og:site_name" content={site.name} />
+    <meta property="og:title" content={title} />
+    <meta property="og:description" content={description} />
+    {canonical && <meta property="og:url" content={canonical} />}
+    {socialImage && <meta property="og:image" content={socialImage} />}
+    <meta name="twitter:card" content="summary" />
+    <meta name="twitter:title" content={title} />
+    <meta name="twitter:description" content={description} />
+    {socialImage && <meta name="twitter:image" content={socialImage} />}
+    <title>{title}</title>
+  </head>
+  <body>
+    <a class="skip-link" href="#main-content">Skip to content</a>
+    <slot />
+  </body>
+</html>
