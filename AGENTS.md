@@ -10,4 +10,3 @@ Read this file and the relevant documents in `docs/` before making changes. Insp
 - Update the relevant documentation when behaviour, configuration or deployment changes.
 - Do not add credentials, tracking, analytics, fake company claims, placeholder URLs or unapproved brand assets.
 - Do not modify unrelated files or rewrite Git history.
-

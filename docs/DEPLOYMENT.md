@@ -21,4 +21,3 @@ Configure a GitHub branch ruleset for `main` that requires pull requests and the
 Add a custom domain in the Pages project dashboard and complete its DNS instructions. Cloudflare retains previous production deployments: open a known-good deployment in the dashboard and use its rollback option if a release must be reverted. For a failed build, inspect the deployment log, fix the source branch, and push a new commit.
 
 Cloudflare Pages is not connected or live-verified by this repository alone. An account owner must complete the dashboard steps above.
-

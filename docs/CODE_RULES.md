@@ -6,4 +6,3 @@
 - Use Tailwind for the supported integration; keep the small visual system in `src/styles/global.css`.
 - Run formatting, checks, build and smoke tests before opening a pull request.
 - Do not add a backend, database, analytics or account features without an approved requirement.
-

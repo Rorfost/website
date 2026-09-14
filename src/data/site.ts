@@ -26,4 +26,3 @@ export const navigation = [
   { label: 'Projects', href: '#projects' },
   { label: 'Contact', href: '#contact' },
 ] as const;
-

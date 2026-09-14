@@ -15,4 +15,3 @@ Unconfirmed products, client services, contact details, social links and domain 
 ## Cloudflare native Git integration
 
 Cloudflare Pages handles production and preview deployments from Git. GitHub Actions only verifies source quality.
-

@@ -39,4 +39,3 @@ npm test
 - `docs/` — architecture, configuration, deployment and decisions
 
 See [deployment instructions](docs/DEPLOYMENT.md) before connecting Cloudflare Pages.
-

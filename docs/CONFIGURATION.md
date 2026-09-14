@@ -12,4 +12,4 @@ Do not set it to localhost or a guessed domain. No secrets are required for this
 
 ## Content and branding
 
-Update `src/data/site.ts` with approved contact details, social links and project entries. Projects render automatically only when entries are present. The present temporary text brand treatment must be replaced with approved horizontal logo and icon source files when they are supplied.
+Update `src/data/site.ts` with approved contact details, social links and project entries. Projects render automatically only when entries are present. Approved logo, icon and social-preview source files live in `src/assets/` and are imported by the layout and brand component.

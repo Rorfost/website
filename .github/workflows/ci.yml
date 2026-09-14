@@ -47,4 +47,3 @@ jobs:
             playwright-report/
             test-results/
           if-no-files-found: ignore
-
