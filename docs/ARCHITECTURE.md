@@ -1,6 +1,6 @@
 # Architecture
 
-The site is a static Astro build. It has no server-side adapter, database or runtime API.
+The site is a static Astro build deployed through Cloudflare Workers Static Assets. It has no server-side adapter, database or runtime API.
 
 | Area      | Location                       | Purpose                                         |
 | --------- | ------------------------------ | ----------------------------------------------- |
@@ -9,5 +9,6 @@ The site is a static Astro build. It has no server-side adapter, database or run
 | Layout    | `src/layouts/BaseLayout.astro` | Metadata, skip link and global CSS              |
 | Content   | `src/data/site.ts`             | Typed public facts and approved project entries |
 | Styles    | `src/styles/global.css`        | Brand tokens and responsive layout              |
+| Delivery  | `wrangler.jsonc`               | Static `dist/` assets and HTML routing          |
 
 Use the typed configuration for company details, contact fields, external links and project cards. Components render the data without duplicating it.

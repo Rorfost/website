@@ -13,3 +13,5 @@ Do not set it to localhost or a guessed domain. No secrets are required for this
 ## Content and branding
 
 Update `src/data/site.ts` with approved contact details, social links and project entries. Projects render automatically only when entries are present. Approved logo, icon and social-preview source files live in `src/assets/` and are imported by the layout and brand component.
+
+The logo and hero icon are transformed by Astro's Sharp image service during `npm run build`. The generated files are emitted to `dist/_astro/`; they must be served as static assets. The site does not use Astro's runtime `/_image` endpoint.

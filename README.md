@@ -8,7 +8,7 @@ The public website for Rorfost, an independent software brand building useful so
 - TypeScript in strict mode
 - Tailwind CSS via the current Vite integration
 - Playwright smoke tests
-- Cloudflare Pages Git integration for hosting
+- Cloudflare Workers Static Assets for hosting
 
 ## Local development
 
@@ -26,6 +26,7 @@ npm run format:check
 npm run lint
 npm run check
 npm run build
+npm run preview:production
 npm test
 ```
 
@@ -38,4 +39,4 @@ npm test
 - `tests/` — browser smoke tests
 - `docs/` — architecture, configuration, deployment and decisions
 
-See [deployment instructions](docs/DEPLOYMENT.md) before connecting Cloudflare Pages.
+See [deployment instructions](docs/DEPLOYMENT.md) before connecting Cloudflare Workers.

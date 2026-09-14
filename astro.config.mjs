@@ -1,4 +1,4 @@
-import { defineConfig } from 'astro/config';
+import { defineConfig, sharpImageService } from 'astro/config';
 import sitemap from '@astrojs/sitemap';
 import tailwindcss from '@tailwindcss/vite';
 
@@ -8,6 +8,9 @@ export default defineConfig({
   output: 'static',
   site: siteOrigin ? new URL(siteOrigin) : undefined,
   integrations: siteOrigin ? [sitemap()] : [],
+  image: {
+    service: sharpImageService(),
+  },
   vite: {
     plugins: [tailwindcss()],
   },

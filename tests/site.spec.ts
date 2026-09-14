@@ -17,6 +17,28 @@ test('homepage provides working primary navigation', async ({ page }) => {
   ).toHaveAttribute('href', 'https://github.com/rorfost');
 });
 
+test('homepage serves static optimized brand images', async ({ page }) => {
+  await page.goto('/');
+
+  const sources = await Promise.all([
+    page.locator('.brand-image').getAttribute('src'),
+    page.locator('.hero-icon').getAttribute('src'),
+  ]);
+
+  for (const source of sources) {
+    if (!source) {
+      throw new Error('Expected a brand image source.');
+    }
+
+    expect(source).toMatch(/^\/_astro\//);
+    expect(source).not.toContain('/_image');
+
+    const response = await page.request.get(source);
+    expect(response.ok()).toBe(true);
+    expect(response.headers()['content-type']).toMatch(/^image\//);
+  }
+});
+
 test('mobile navigation can be opened with the keyboard', async ({ page }) => {
   await page.goto('/');
   await page.setViewportSize({ width: 375, height: 667 });
