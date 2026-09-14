@@ -1,10 +1,10 @@
 ---
-import Footer from '../components/Footer.astro';
-import Header from '../components/Header.astro';
 import { Image } from 'astro:assets';
 import brandIcon from '../assets/rorfost-icon.png';
-import BaseLayout from '../layouts/BaseLayout.astro';
+import Footer from '../components/Footer.astro';
+import Header from '../components/Header.astro';
 import { site } from '../data/site';
+import BaseLayout from '../layouts/BaseLayout.astro';
 ---
 
 <BaseLayout>
@@ -25,15 +25,17 @@ import { site } from '../data/site';
               class="text-link"
               href={site.githubUrl}
               target="_blank"
-              rel="noreferrer">Visit GitHub <span aria-hidden="true">↗</span></a
+              rel="noreferrer"
             >
+              Visit GitHub <span aria-hidden="true">&rarr;</span>
+            </a>
           </div>
         </div>
         <div class="hero-panel" aria-hidden="true">
-          <div class="panel-line panel-line--blue"></div>
-          <div class="panel-line panel-line--teal"></div>
-          <div class="panel-line panel-line--orange"></div>
-          <Image class="hero-icon" src={brandIcon} alt="" />
+          <span class="hero-panel-label">Rorfost</span>
+          <div class="hero-icon-frame">
+            <Image class="hero-icon" src={brandIcon} alt="" />
+          </div>
         </div>
       </div>
     </section>
@@ -76,7 +78,7 @@ import { site } from '../data/site';
                     target="_blank"
                     rel="noreferrer"
                   >
-                    View project <span aria-hidden="true">↗</span>
+                    View project <span aria-hidden="true">&rarr;</span>
                   </a>
                 </article>
               ))}
@@ -96,7 +98,7 @@ import { site } from '../data/site';
                 target="_blank"
                 rel="noreferrer"
               >
-                Follow our work on GitHub <span aria-hidden="true">↗</span>
+                Follow our work on GitHub <span aria-hidden="true">&rarr;</span>
               </a>
             </div>
           )
@@ -118,8 +120,10 @@ import { site } from '../data/site';
           class="button button--light"
           href={site.githubUrl}
           target="_blank"
-          rel="noreferrer">Open GitHub <span aria-hidden="true">↗</span></a
+          rel="noreferrer"
         >
+          Open GitHub <span aria-hidden="true">&rarr;</span>
+        </a>
       </div>
     </section>
   </main>

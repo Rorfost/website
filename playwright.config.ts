@@ -7,14 +7,15 @@ export default defineConfig({
   retries: process.env.CI ? 2 : 0,
   reporter: [['html', { open: 'never' }], ['list']],
   use: {
-    baseURL: 'http://localhost:4321',
+    baseURL: 'http://127.0.0.1:4321',
     trace: 'retain-on-failure',
     screenshot: 'only-on-failure',
   },
   projects: [{ name: 'chromium', use: { ...devices['Desktop Chrome'] } }],
   webServer: {
-    command: 'npm run dev',
-    url: 'http://localhost:4321',
-    reuseExistingServer: !process.env.CI,
+    command:
+      'npm run build && node node_modules/vite/bin/vite.js preview --host 127.0.0.1 --port 4321',
+    url: 'http://127.0.0.1:4321',
+    reuseExistingServer: false,
   },
 });

@@ -19,8 +19,8 @@ test('mobile navigation can be opened with the keyboard', async ({ page }) => {
   await expect(page.getByRole('link', { name: 'Contact' })).toBeVisible();
 });
 
-test('unknown routes show the 404 page', async ({ page }) => {
-  await page.goto('/not-a-page');
+test('the built 404 page is available', async ({ page }) => {
+  await page.goto('/404.html');
   await expect(
     page.getByRole('heading', { name: 'This page is not here.' }),
   ).toBeVisible();
