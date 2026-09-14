@@ -12,6 +12,6 @@ Company facts and projects are stored in one typed file so future edits remain s
 
 Unconfirmed products, client services, contact details, social links and domain are omitted. GitHub is the current working contact fallback.
 
-## Cloudflare native Git integration
+## Cloudflare Workers Static Assets
 
-Cloudflare Pages handles production and preview deployments from Git. GitHub Actions only verifies source quality.
+Cloudflare Workers serves the static `dist/` output defined in `wrangler.jsonc`. This keeps public pages and optimized images out of the Worker runtime. GitHub Actions only verifies source quality.
